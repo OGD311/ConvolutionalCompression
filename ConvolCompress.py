@@ -21,7 +21,7 @@ orig = Image.open(file)
 orig.convert(mode="RGB")
 compr = Image.new(mode="RGB", color=(256, 256, 256), size=(orig.width-1, orig.height-1))
 newFile = file.replace(".png","")+" Compressed"
-print(newFile)
+#print(newFile)
 compr.save(f"{newFile}.png")
 
 #functions
@@ -64,5 +64,5 @@ for x in range(0,orig.width-1):
 #Save
 compr.save(f"{newFile}.png")
 end = time.time()
-
-print(f"Image compressed by 1/{numPix} times in {end-start} seconds")
+timeTaken = str(end-start)
+print(f"Image compressed by 1/{numPix} times in {(timeTaken[0:timeTaken.index('.')+2])} seconds")
